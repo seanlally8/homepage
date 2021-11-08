@@ -1,6 +1,6 @@
 /* Tag selectors */
 a, a:hover {
-    color: #ffe698;
+    color: #a3dbd6;;
     text-decoration: none;
 }
 
@@ -13,7 +13,6 @@ article {
 }
 
 body {
-    background-color: rgb(218, 234, 227);
     font-family: "Helvetica", sans-serif;
     font-weight: normal;
     text-transform: uppercase;
@@ -31,17 +30,20 @@ label {
 }
 
 footer {
+    display: flex;
     background-color: rgb(109, 155, 135);
     border-top: 2px solid black;
     position: fixed;
     bottom: 0;
-    height: 9.1vh;
+    height: 6.1em;
     width:100vw;
 }
 
 form {
-    padding-left: 2vw;
-    padding-top: 2vh;
+    position: absolute;
+    left: 3vw;
+    top: 2.2vh;
+    display: inline-block;
 }
 
 header {
@@ -49,7 +51,7 @@ header {
     background-color: rgb(109, 155, 135);
     border-bottom: 2px solid black;
     width: 100%;
-    height: 4.1em;
+    height: 6.1vh;
 }
 
 h1 {
@@ -83,6 +85,10 @@ ul {
 
 
 /* Class selectors */
+.articlesheaderfooter {
+    background-color: rgb(88, 89, 164);
+}
+
 .btn, .btn:hover, .btn:active, .btn::after {
     content: none;
     color: black !important;
@@ -128,227 +134,8 @@ ul {
     text-decoration: none;
 }
 
-.sociallist {
-    display: inline-block;
-    margin-right: 30px;
-}
-
-.tab {
-    margin-left: 60px;
-}
-
-.videolist {
-    text-align: center;
-    padding-top: 130px;
-}
-
-.videoheaderfooter {
-    background-color: rgb(164, 88, 88);
-}
-
-
-/* id Selectors */
-#aboutback {
-    background-color: rgb(109, 155, 135);
-    font-family: "Helvetica", sans-serif;
-    font-weight: normal;
-    transform: uppercase;
-}
-
-#aboutimg {
-    background-image: url("dance.png");
-    background-position: 50% 34%;
-    width: 100%;
-    height: 25em;
-}
-
-#abouttxt {
-    margin-right: 300px;
-    margin-left: 300px;
-}
-
-#email {
-    border-radius: 15px 50px;
-    background-color: rgb(225, 225, 225);
-    border: 1px solid black;
-    margin-right: 1vw;
-    box-shadow: 2px 2px 3px black;
-}
-
-#home_img {
-    position: absolute;
-    top: 8vh;
-    background-image: url("reachup.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    border: 2px solid black;
-    height: 83vh;
-    width: 100vw;
-}
-
-#indexfooter {
-    background-color: rgb(218, 234, 227);
-}
-
-#social {
-    position: fixed;
-    list-style-type: none;
-    bottom: 0;
-    right: 3vh;
-}
-
-#stream {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-#submitbtn {
-    background-color: rgb(225, 225, 225);
-    border-radius: 8px;
-    border: 1px solid black;
-    font-weight: bold;
-    box-shadow: 2px 2px 3px black;
-}
-
-#videosback {
-    background-color: rgb(164, 88, 88);
-    font-family: "Helvetica", sans-serif;
-    font-weight: normal;
-    transform: uppercase;
-}
-
-
-
-/* Tag selectors */
-a, a:hover {
-    color: #ffe698;
-    text-decoration: none;
-}
-
-article {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    text-align: justify;
-    text-transform: none;
-}
-
-body {
-    background-color: rgb(218, 234, 227);
-    font-family: "Helvetica", sans-serif;
-    font-weight: normal;
-    text-transform: uppercase;
-}
-
-blockquote {
-    margin: 0px 160px 0px 0px;
-    font-size: .8em;
-}
-
-label {
-    margin-right: 2vw;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-footer {
-    background-color: rgb(109, 155, 135);
-    border-top: 2px solid black;
-    position: fixed;
-    bottom: 0;
-    height: 9.1vh;
-    width:100vw;
-}
-
-form {
-    padding-left: 2vw;
-    padding-top: 2vh;
-}
-
-header {
-    position: fixed;
-    background-color: rgb(109, 155, 135);
-    border-bottom: 2px solid black;
-    width: 100%;
-    height: 4.1em;
-}
-
-h1 {
-    position: absolute;
-    top: 2vh;
-    left: 2vw;
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: -0.050em;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 2vh;
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: -0.050em;
-}
-
-h3 {
-    text-align: center;
-    font-size: 3.5em;
-    font-weight: bold;
-    letter-spacing: -0.050em;
-    color: black;
-}
-
-ul {
-    list-style-type: none;
-}
-
-
-/* Class selectors */
-.btn, .btn:hover, .btn:active, .btn::after {
-    content: none;
-    color: black !important;
-    background-color: inherit !important;
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
-    border-right: 0;
-    border-left: 0;
-    width: 50px;
-    height: 25px;
-}
-
-.center {
-    text-align: center;
-}
-
-.dropdown-item:hover {
-
-    background-color: rgb(146, 156, 149);
-}
-
-.dropdown {
-    position: fixed;
-    top: 2vh;
-    right: 2vh;
-    background-color: inherit;
-}
-
-.dropdown-menu {
-    background-color: inherit;
-    border: 3px solid black !important;
-}
-
-
-.firstletter::first-letter {
-    font-size: 4em;
-    font-family: "Georgia", sans-serif;
-    font-weight: normal;
-}
-
-.headlink, .headlink:hover {
-    color: black;
-    text-decoration: none;
+.musicheaderfooter {
+    background-color: rgb(164, 88, 159);
 }
 
 .sociallist {
@@ -390,255 +177,49 @@ ul {
     margin-left: 300px;
 }
 
-#email {
+#articlesback {
+    background-color: rgb(88, 89, 164);
+}
+
+#email, #email:focus {
+    outline: none;
     border-radius: 15px 50px;
     background-color: rgb(225, 225, 225);
     border: 1px solid black;
     margin-right: 1vw;
+    box-shadow: 1px 1px 3px black;
+    text-align: center;
 }
 
 #home_img {
     position: absolute;
-    top: 8vh;
+    top: 0;
+    bottom: 0;
     background-image: url("reachup.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
     border: 2px solid black;
-    height: 83vh;
+    height: 100vh;
     width: 100vw;
 }
 
-#indexfooter {
+#indexheaderfooter {
     background-color: rgb(218, 234, 227);
 }
+
+#musicback {
+    background-color: rgb(164, 88, 159);
+}
+
 
 #social {
-    position: fixed;
-    list-style-type: none;
-    bottom: 0;
-    right: 3vh;
-}
-
-#stream {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-
-#submitbtn {
-    background-color: rgb(225, 225, 225);
-    border-radius: 8px;
-    border: 1px solid black;
-    font-weight: bold;
-}
-
-#videosback {
-    background-color: rgb(164, 88, 88);
-    font-family: "Helvetica", sans-serif;
-    font-weight: normal;
-    transform: uppercase;
-}
-
-
-/* Tag selectors */
-a, a:hover {
-    color: #ffe698;
-    text-decoration: none;
-}
-
-article {
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-    text-align: justify;
-    text-transform: none;
-}
-
-body {
-    background-color: rgb(218, 234, 227);
-    font-family: "Helvetica", sans-serif;
-    font-weight: normal;
-    text-transform: uppercase;
-}
-
-blockquote {
-    margin: 0px 160px 0px 0px;
-    font-size: .8em;
-}
-
-label {
-    margin-right: 2vw;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-footer {
-    background-color: rgb(109, 155, 135);
-    border-top: 2px solid black;
-    position: fixed;
-    bottom: 0;
-    height: 9.1vh;
-    width:100vw;
-}
-
-form {
-    padding-left: 2vw;
-    padding-top: 2vh;
-}
-
-header {
-    position: fixed;
-    background-color: rgb(109, 155, 135);
-    border-bottom: 2px solid black;
-    width: 100%;
-    height: 4.1em;
-}
-
-h1 {
-    position: absolute;
-    top: 2vh;
-    left: 2vw;
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: -0.050em;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 2vh;
-    font-size: 1.5em;
-    font-weight: bold;
-    letter-spacing: -0.050em;
-}
-
-h3 {
-    text-align: center;
-    font-size: 3.5em;
-    font-weight: bold;
-    letter-spacing: -0.050em;
-    color: black;
-}
-
-ul {
-    list-style-type: none;
-}
-
-
-/* Class selectors */
-.btn, .btn:hover, .btn:active, .btn::after {
-    content: none;
-    color: black !important;
-    background-color: inherit !important;
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
-    border-right: 0;
-    border-left: 0;
-    width: 50px;
-    height: 25px;
-}
-
-.center {
-    text-align: center;
-}
-
-.dropdown-item:hover {
-
-    background-color: rgb(146, 156, 149);
-}
-
-.dropdown {
-    position: fixed;
-    top: 2vh;
-    right: 2vh;
-    background-color: inherit;
-}
-
-.dropdown-menu {
-    background-color: inherit;
-    border: 3px solid black !important;
-}
-
-
-.firstletter::first-letter {
-    font-size: 4em;
-    font-family: "Georgia", sans-serif;
-    font-weight: normal;
-}
-
-.headlink, .headlink:hover {
-    color: black;
-    text-decoration: none;
-}
-
-.sociallist {
     display: inline-block;
-    margin-right: 30px;
-}
-
-.tab {
-    margin-left: 60px;
-}
-
-.videolist {
-    text-align: center;
-    padding-top: 130px;
-}
-
-.videoheaderfooter {
-    background-color: rgb(164, 88, 88);
-}
-
-
-/* id Selectors */
-#aboutback {
-    background-color: rgb(109, 155, 135);
-    font-family: "Helvetica", sans-serif;
-    font-weight: normal;
-    transform: uppercase;
-}
-
-#aboutimg {
-    background-image: url("dance.png");
-    background-position: 50% 34%;
-    width: 100%;
-    height: 25em;
-}
-
-#abouttxt {
-    margin-right: 300px;
-    margin-left: 300px;
-}
-
-#email {
-    border-radius: 15px 50px;
-    background-color: rgb(225, 225, 225);
-    border: 1px solid black;
-    margin-right: 1vw;
-    box-shadow: 2px 2px 3px black;
-}
-
-#home_img {
     position: absolute;
-    top: 8vh;
-    background-image: url("reachup.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    border: 2px solid black;
-    height: 83vh;
-    width: 100vw;
-}
-
-#indexfooter {
-    background-color: rgb(218, 234, 227);
-}
-
-#social {
-    position: fixed;
+    top: 2.2vh;
+    right: 3vw;
+    padding: 0;
     list-style-type: none;
-    bottom: 0;
-    right: 3vh;
 }
 
 #stream {
@@ -652,7 +233,8 @@ ul {
     border-radius: 8px;
     border: 1px solid black;
     font-weight: bold;
-    box-shadow: 2px 2px 3px black;
+    box-shadow: 1px 1px 3px black;
+    width: 8vw;
 }
 
 #videosback {
