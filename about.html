@@ -6,19 +6,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
+        <meta property="og:image" content="reachup.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <link href="styles.css" rel="stylesheet">
 
         <title>My Thing</title>
-
     </head>
-    <body id="aboutback">
-
+    <body class="aboutback">
     <!-- Header container -->
         <header>
             <h1><a class="headlink" href="index.html">Sean Lally</a></h1>
@@ -102,14 +97,34 @@
             </article>
         </section>
 
-    <!-- Footer container -->
+    <!-- Footer  -->
+        <form class="">
+            <input type="text" id="email" autocomplete="off" placeholder="enter your email here" size="30">
+            <!-- Button trigger modal -->
+            <button onclick="confirm();" type="button" class="confirmbtn" data-bs-toggle="modal" data-bs-target="#mainmodal">
+            SUBSCRIBE
+            </button>
+        </form>
+
+            <!-- This Modal is a modified bootstrap component -->
+        <div class="modal fade" id="mainmodal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content aboutback">
+                     <div class="modal-header">
+                     <h5 class="modal-title" id="modal-title">!</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                  <div class="modal-body">
+                      <p id="confirmmsg"></p>
+                  </div>
+                  <div class="modal-footer">
+                       <button type="button" class="okbtn" data-bs-dismiss="modal">OK</button>
+                   </div>
+                </div>
+             </div>
+         </div>
+
         <footer>
-            <div>
-                <form>
-                    <input type="text" id="email" autocomplete="off" placeholder="enter your email here" size="30">
-                    <input type="submit" id="submitbtn" value="SUBSCRIBE">
-                </form>
-            </div>
              <ul id="social">
                 <li class="sociallist"><a target="_blank" href="https://www.instagram.com/mydearanacolutha/">
                     <i class="fa fa-instagram" style="font-size:30px;color:black"></i>
@@ -126,7 +141,25 @@
             </ul>
         </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+
+        function confirm() {
+            let email = document.querySelector('#email').value;
+            let myRe = /^[a-zA-Z.0-9]+@[a-zA-Z]+(\.com|\.edu)$/g;
+            let found = myRe.test(email);
+            let confirmmsg = document.querySelector('#confirmmsg');
+            let modaltitle = document.querySelector('#modal-title');
+
+            if (found === true) {
+                modaltitle.innerHTML = 'Woohoo!';
+                confirmmsg.innerHTML = 'Were this a real form, you would now be subscribed to the Maker of Things newsletter! You would receive a confirmation email shortly. You would be able to unsubscribe at any time by clicking \'unsubscribe\' in any email received via this form.';
+            }
+            else {
+                modaltitle.innerHTML = 'Uh Oh...';
+                confirmmsg.innerHTML = 'Sorry, that\'s not a valid email. Check to make sure everything\'s in order and try again!';
+            }
+        }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 </html>

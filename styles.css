@@ -19,44 +19,41 @@ body {
 }
 
 blockquote {
-    margin: 0px 160px 0px 0px;
+    margin-right: 8vw;
     font-size: .8em;
-}
-
-label {
-    margin-right: 2vw;
-    font-weight: bold;
-    text-transform: uppercase;
 }
 
 footer {
     display: flex;
     background-color: rgb(109, 155, 135);
-    border-top: 2px solid black;
+    border-top: 0;
     position: fixed;
     bottom: 0;
-    height: 6.1em;
+    height: 5.1em;
     width:100vw;
+    white-space: nowrap;
 }
 
-form {
-    position: absolute;
-    left: 3vw;
-    top: 2.2vh;
+.emailform {
+    position: fixed;
+    padding: 0;
+    left: 50px;
+    bottom: 30px;
     display: inline-block;
+    z-index: 1;
 }
 
 header {
     position: fixed;
     background-color: rgb(109, 155, 135);
-    border-bottom: 2px solid black;
+    border-bottom: 0;
     width: 100%;
     height: 6.1vh;
 }
 
 h1 {
     position: absolute;
-    top: 2vh;
+    top: 1.7vh;
     left: 2vw;
     font-size: 1.5em;
     font-weight: bold;
@@ -65,7 +62,8 @@ h1 {
 
 h2 {
     text-align: center;
-    margin-top: 2vh;
+    margin-top: 1.7vh;
+    margin-bottom: 0;
     font-size: 1.5em;
     font-weight: bold;
     letter-spacing: -0.050em;
@@ -79,41 +77,133 @@ h3 {
     color: black;
 }
 
+h5 {
+    text-transform: none;
+}
+
+label {
+    margin-right: 2vw;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+p {
+    text-transform: none;
+    text-align: justify;
+}
+
 ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
 
 /* Class selectors */
+.aboutback {
+    background-color: rgb(109, 155, 135);
+}
+
+.articles-leftcolumn {
+    position: fixed;
+    top: 15vh;
+    float: left;
+    width: 25%;
+}
+
+.articles-rightcolumn {
+    position: absolute;
+    right: 12vw;
+    top: 15vh;
+    width: 50%;
+    z-index: -1;
+}
+
+.articlesback {
+    background-color: rgb(88, 89, 164);
+}
+
 .articlesheaderfooter {
     background-color: rgb(88, 89, 164);
 }
 
-.btn, .btn:hover, .btn:active, .btn::after {
-    content: none;
-    color: black !important;
-    background-color: inherit !important;
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
-    border-right: 0;
-    border-left: 0;
-    width: 50px;
-    height: 25px;
+.bandcmp {
+     border: 0;
+     width: 350px;
+     height: 442px;
+ }
+
+.blogpostheading p {
+    display: inline;
+}
+
+.blogpostheading {
+    padding-bottom: 20px;
+}
+
+.blogpost {
+    border: .5px solid rgb(143, 128, 166);
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+.blogpost h4 {
+    text-transform: none;
+    font-family: "Libre Baskerville", serif;
+    font-size: 2em;
+    text-align: left;
+}
+
+.blogpost p {
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.2em;
+}
+
+.blogtitlelink {
+    color: black;
+}
+
+.blogtitlelink:hover {
+    color: rgb(188, 124, 198);
+}
+
+.blogdate {
+    float: right;
+}
+
+.blognav {
+    position: absolute;
+     width: 30%;
+     left: 10vw;
+}
+
+
+.blogform {
+    position: relative;
+    top: 2vh;
+
 }
 
 .center {
     text-align: center;
 }
 
-.dropdown-item:hover {
+.confirmbtn {
+    background-color: rgb(225, 225, 225);
+    border-radius: 8px;
+    border: 1px solid black;
+    font-weight: bold;
+    box-shadow: .5px .5px 3px grey;
+    text-align: center;
+}
 
+.dropdown-item:hover {
     background-color: rgb(146, 156, 149);
 }
 
 .dropdown {
     position: fixed;
-    top: 2vh;
-    right: 2vh;
+    top: 1.7vh;
+    right: 2vw;
     background-color: inherit;
 }
 
@@ -121,7 +211,6 @@ ul {
     background-color: inherit;
     border: 3px solid black !important;
 }
-
 
 .firstletter::first-letter {
     font-size: 4em;
@@ -134,8 +223,44 @@ ul {
     text-decoration: none;
 }
 
+.indexheaderfooter {
+    background-color: rgb(218, 234, 227);
+}
+
+.lowercase {
+    text-transform: none;
+}
+
+.litbtn {
+    background-color: rgb(188, 124, 198);
+    border: 1px solid rgb(101, 98, 183);
+    font-weight: bold;
+    box-shadow: .5px .5px 3px grey;
+    text-align: center;
+    margin-top: 4vh;
+    padding: 2vh 2vw 2vh 2vw;
+}
+
+.litbtn:hover {
+    background-color: rgb(94, 42, 102);
+    color: rgb(188, 124, 198);
+}
+
+.litbtn:first-child {
+    margin-top: 0;
+}
+
 .musicheaderfooter {
     background-color: rgb(164, 88, 159);
+}
+
+.okbtn {
+    background-color: rgb(225, 225, 225);
+    border-radius: 8px;
+    border: 1px solid black;
+    font-weight: bold;
+    box-shadow: .5px .5px 3px grey;
+    width: 4vw;
 }
 
 .sociallist {
@@ -149,7 +274,8 @@ ul {
 
 .videolist {
     text-align: center;
-    padding-top: 130px;
+    padding-top: 12vh;
+
 }
 
 .videoheaderfooter {
@@ -158,13 +284,6 @@ ul {
 
 
 /* id Selectors */
-#aboutback {
-    background-color: rgb(109, 155, 135);
-    font-family: "Helvetica", sans-serif;
-    font-weight: normal;
-    transform: uppercase;
-}
-
 #aboutimg {
     background-image: url("dance.png");
     background-position: 50% 34%;
@@ -173,12 +292,20 @@ ul {
 }
 
 #abouttxt {
-    margin-right: 300px;
-    margin-left: 300px;
+    margin-right: 20vw;
+    margin-left: 20vw;
 }
 
-#articlesback {
-    background-color: rgb(88, 89, 164);
+#dropdownMenuButton1, #dropdownMenuButton1:hover, #dropdownMenuButton1:active, #dropdownMenuButton1::after {
+    content: none;
+    color: black !important;
+    background-color: inherit !important;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    border-right: 0;
+    border-left: 0;
+    width: 50px;
+    height: 25px;
 }
 
 #email, #email:focus {
@@ -187,7 +314,7 @@ ul {
     background-color: rgb(225, 225, 225);
     border: 1px solid black;
     margin-right: 1vw;
-    box-shadow: 1px 1px 3px black;
+    box-shadow: 1px 1px 3px grey;
     text-align: center;
 }
 
@@ -199,25 +326,29 @@ ul {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    border: 2px solid black;
-    height: 100vh;
-    width: 100vw;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
 }
 
-#indexheaderfooter {
-    background-color: rgb(218, 234, 227);
-}
+
 
 #musicback {
     background-color: rgb(164, 88, 159);
 }
 
+#confirmmsg {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 #social {
     display: inline-block;
     position: absolute;
-    top: 2.2vh;
-    right: 3vw;
+    bottom: 30px;
+    right: 50px;
+    margin-bottom: 0;
     padding: 0;
     list-style-type: none;
 }
@@ -228,18 +359,90 @@ ul {
     left: 0;
 }
 
-#submitbtn {
-    background-color: rgb(225, 225, 225);
-    border-radius: 8px;
-    border: 1px solid black;
-    font-weight: bold;
-    box-shadow: 1px 1px 3px black;
-    width: 8vw;
-}
-
 #videosback {
     background-color: rgb(164, 88, 88);
     font-family: "Helvetica", sans-serif;
     font-weight: normal;
     transform: uppercase;
 }
+
+/* styling for iphone and ipad */
+@media screen and (max-width: 800px) {
+    #abouttxt {
+        margin-right: 5vw;
+        margin-left: 5vw;
+    }
+
+    #social {
+        position: absolute;
+        bottom: 3vh;
+        right: 19vw;
+    }
+
+    h1 {
+        visibility: hidden;
+    }
+
+    h2 {
+        margin-right: 4vw;
+    }
+
+    header {
+        height: 10vh;
+    }
+
+    .emailform {
+        visibility: hidden;
+    }
+
+    /* found the following css on tipswithpunch youtube account:
+    https://www.youtube.com/watch?v=9YffrCViTVk */
+
+    .youtube {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      z-index: -1;
+    }
+
+    .youtube iframe{
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+}
+
+@media screen and (max-width: 677px) {
+
+    .articles-rightcolumn {
+        top: 30vh;
+        right: 0vw;
+        left: 2.4vw;
+        width: 95%;
+    }
+
+    .articles-leftcolumn {
+        position: absolute;
+    }
+
+    .litbtn {
+        position: absolute;
+        border-radius: 0;
+        width: 80vw;
+        height: 10vh;
+        padding-right: 0;
+        color: black;
+        z-index: -1;
+    }
+
+    .blogform {
+        top: 0;
+    }
+
+
+}
+
