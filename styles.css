@@ -116,6 +116,7 @@ ul {
     top: 15vh;
     width: 50%;
     z-index: -1;
+    animation: moveup 2s;
 }
 
 .articlesback {
@@ -172,15 +173,15 @@ ul {
 
 .blognav {
     position: absolute;
-     width: 30%;
-     left: 10vw;
+    width: 30%;
+    left: 10vw;
+    animation: moveside 2s;
 }
 
 
 .blogform {
     position: relative;
     top: 2vh;
-
 }
 
 .center {
@@ -395,6 +396,10 @@ ul {
         visibility: hidden;
     }
 
+     .fn {
+        z-index: -1;
+    }
+
     /* found the following css on tipswithpunch youtube account:
     https://www.youtube.com/watch?v=9YffrCViTVk */
 
@@ -416,6 +421,7 @@ ul {
     }
 }
 
+/* adjustments specifically for articles page */
 @media screen and (max-width: 677px) {
 
     .articles-rightcolumn {
@@ -423,6 +429,8 @@ ul {
         right: 0vw;
         left: 2.4vw;
         width: 95%;
+        animation: moveupphone 2s;
+
     }
 
     .articles-leftcolumn {
@@ -442,7 +450,20 @@ ul {
     .blogform {
         top: 0;
     }
+}
 
+@keyframes moveup {
+    from {top: 100vh;}
+    to {top: 15vh;}
+}
 
+@keyframes moveupphone {
+    from {top: 100vh;}
+    to {top: 30vh;}
+    }
+
+@keyframes moveside {
+    from {left: 0vw;}
+    to {left: 10vw;}
 }
 
