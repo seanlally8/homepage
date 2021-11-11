@@ -43,10 +43,10 @@
             <div class="articles-leftcolumn">
                 <div class="blognav">
                     <form class="blogform">
-                        <input type="submit" class="litbtn" value="POEMS">
-                        <input type="submit" class="litbtn" value="ESSAYS">
-                        <input type="submit" class="litbtn" value="NARRATIVE">
-                        <input type="submit" class="litbtn" value="COMMERCIAL">
+                        <input type="submit" class="litbtn" id="poems" value="POEMS">
+                        <input type="submit" class="litbtn" id="essays" value="ESSAYS">
+                        <input type="submit" class="litbtn" id="narrative" value="NARRATIVE">
+                        <input type="submit" class="litbtn" id="commercial" value="COMMERCIAL">
                     </form>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             <!-- Column with articles -->
             <div class="articles-rightcolumn">
                 <!-- Article 1 -->
-                <div class="blogpost">
+                <div class="blogpost essay">
                     <div class="blogpostheading">
                         <p>ESSAY</p>
                         <p class="blogdate">MAY 28 2020</p>
@@ -71,7 +71,7 @@
                 </div>
 
                 <!-- Article 2 -->
-                <div class="blogpost">
+                <div class="blogpost essay">
                     <div class="blogpostheading">
                         <p>ESSAY</p>
                         <p class="blogdate">MAY 5 2020</p>
@@ -86,7 +86,7 @@
                 </div>
 
                 <!-- Article 3 -->
-                 <div class="blogpost">
+                 <div class="blogpost narrative-essay">
                     <div class="blogpostheading">
                         <p>NARRATIVE ESSAY</p>
                         <p class="blogdate">MAY 2 2020</p>
@@ -101,7 +101,7 @@
                 </div>
 
                 <!-- Article 4 -->
-                <div class="blogpost">
+                <div class="blogpost narrative-poem-essay">
                     <div class="blogpostheading">
                         <p>NARRATIVE POEM ESSAY</p>
                         <p class="blogdate">MAY 2 2020</p>
@@ -117,7 +117,7 @@
                 </div>
 
                 <!-- Article 5 -->
-                <div class="blogpost">
+                <div class="blogpost poem">
                     <div class="blogpostheading">
                         <p>POEM</p>
                         <p class="blogdate">APRIL 28 2020</p>
@@ -130,7 +130,7 @@
                 </div>
 
                 <!-- Article 6 -->
-                 <div class="blogpost">
+                 <div class="blogpost poem">
                     <div class="blogpostheading">
                         <p>POEM</p>
                         <p class="blogdate">APRIL 28 2020</p>
@@ -143,7 +143,7 @@
                 </div>
 
                 <!-- Article 7 -->
-                <div class="blogpost">
+                <div class="blogpost poem-essay">
                     <div class="blogpostheading">
                         <p>POEM ESSAY</p>
                         <p class="blogdate">APRIL 28 2020</p>
@@ -158,7 +158,7 @@
                 </div>
 
                 <!-- Article 8 -->
-                <div class="blogpost">
+                <div class="blogpost poem-essay">
                     <div class="blogpostheading">
                         <p>POEM ESSAY</p>
                         <p class="blogdate">APRIL 24 2020</p>
@@ -250,7 +250,7 @@
                 html = '<select name="genres" class="litbtn"><option value="poems">POEMS</option><option value="essays">ESSAYS</option><option value="narrative">NARRATIVE</option><option value="commercial">COMMERCIAL</option>';
             }
             else {
-                html='<input type="submit" class="litbtn" value="POEMS"> <input type="submit" class="litbtn" value="ESSAYS"><input type="submit" class="litbtn" value="NARRATIVE"><input type="submit" class="litbtn" value="COMMERCIAL">';
+                html='<input type="submit" class="litbtn" id="poems" value="POEMS"> <input type="submit" class="litbtn" id="essays" value="ESSAYS"><input type="submit" class="litbtn" id="narrative" value="NARRATIVE"><input type="submit" class="litbtn" id="commercial" value="COMMERCIAL">';
             }
             document.querySelector('.blogform').innerHTML = html
         }
@@ -266,6 +266,8 @@
         }
 
         document.querySelector('.blogform').innerHTML = html
+
+
 
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
