@@ -9,13 +9,13 @@
         <meta property="og:image" content="reachup.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link href="styles.css" rel="stylesheet">
-
         <title>Articles</title>
     </head>
     <body class="articlesback" onresize="changeNav();">
 
-    <!-- Header container -->
+        <!-- Header container -->
         <header class="articlesheaderfooter">
             <h1><a class="headlink" href="index.html">Sean Lally</a></h1>
             <h2>Articles</h2>
@@ -36,22 +36,24 @@
 
         </header>
 
-    <!-- Body container (the "stuffing") -->
+        <!-- Body container (the "stuffing") -->
         <section class="clearfix">
 
-            <!-- Article navbar -->
+            <!-- Left Column, with nav/searchbar -->
             <div class="articles-leftcolumn">
                 <div class="blognav">
-                    <form class="blogform">
-                        <input type="submit" class="litbtn" id="poems" value="POEMS">
-                        <input type="submit" class="litbtn" id="essays" value="ESSAYS">
-                        <input type="submit" class="litbtn" id="narrative" value="NARRATIVE">
-                        <input type="submit" class="litbtn" id="commercial" value="COMMERCIAL">
-                    </form>
+                    <div class="blogsearch">
+                        <input type="text" autocomplete="off" placeholder="Search" id="searchbox">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <br><br>
+                    <div class="blogbuttons">
+                        <!-- See javascript below. The HTML will populate differently depending on size of screen -->
+                    </div>
                 </div>
             </div>
 
-            <!-- Column with articles -->
+            <!-- Right Column with articles -->
             <div class="articles-rightcolumn">
                 <!-- Article 1 -->
                 <div class="blogpost essay">
@@ -86,9 +88,9 @@
                 </div>
 
                 <!-- Article 3 -->
-                 <div class="blogpost narrative-essay">
+                 <div class="blogpost essay">
                     <div class="blogpostheading">
-                        <p>NARRATIVE ESSAY</p>
+                        <p>ESSAY</p>
                         <p class="blogdate">MAY 2 2020</p>
                     </div>
                    <h4><a class="blogtitlelink" target="_blank" href="https://mydearanacolutha.wordpress.com/2020/05/02/holy-laughter/">
@@ -101,9 +103,9 @@
                 </div>
 
                 <!-- Article 4 -->
-                <div class="blogpost narrative-poem-essay">
+                <div class="blogpost poem-essay">
                     <div class="blogpostheading">
-                        <p>NARRATIVE POEM ESSAY</p>
+                        <p>POEM ESSAY</p>
                         <p class="blogdate">MAY 2 2020</p>
                     </div>
                    <h4><a class="blogtitlelink" target="_blank" href="https://mydearanacolutha.wordpress.com/2020/05/02/you-and-i-our-relationship-in-theory-excerpt/">
@@ -158,9 +160,9 @@
                 </div>
 
                 <!-- Article 8 -->
-                <div class="blogpost poem-essay">
+                <div class="blogpost essay">
                     <div class="blogpostheading">
-                        <p>POEM ESSAY</p>
+                        <p>ESSAY</p>
                         <p class="blogdate">APRIL 24 2020</p>
                     </div>
                    <h4><a class="blogtitlelink" target="_blank" href="https://mydearanacolutha.wordpress.com/2020/04/24/some-brief-notes-on-the-writing-of-david-rattray-part-i/">
@@ -172,7 +174,169 @@
                    improvisation. And improvisation carries with it both the means toward life ...</p>
                 </div>
 
-                <!-- TODO: write some backend/java to complete this page -->
+                <!-- Article 9 -->
+                <div class="blogpost review">
+                    <div class="blogpostheading">
+                        <p>REVIEW</p>
+                        <p class="blogdate">September 16 2019</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="https://www.broadwayworld.com/seattle/article/BWW-Review-EVERYTHING-IS-ILLUMINATED-at-Book-It-Repertory-Theatre-20190916">
+                   <i>Everything Is Illuminated</i> reviewed in Broadway World</a></h4>
+                   <p>“Lally as Jonathan and Sakowicz as Alex are masterful, commanding, and most importantly, incredibly charming.”</p>
+                </div>
+
+                <!-- Article 10 -->
+                <div class="blogpost review">
+                    <div class="blogpostheading">
+                        <p>REVIEW</p>
+                        <p class="blogdate">September 10 2015</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="https://www.operanews.com/Opera_News_Magazine/2015/10/Reviews/PHILADELPHIA__Andy__A_Popera.html">
+                   <i>Andy: a Popera</i> reviewed in Opera News</a></h4>
+                   <p>“The script was developed by Jarboe in association with Sean Lally, who also channeled a louchely sexy, fatuously slow-witted Joe D’Alessandro.
+                   Jarboe and Lally’s writing is very smart.”</p>
+                </div>
+
+                <!-- Article 11 -->
+                <div class="blogpost review">
+                    <div class="blogpostheading">
+                        <p>REVIEW</p>
+                        <p class="blogdate">March 21 2019</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="https://www.broadwayworld.com/seattle/article/BWW-Review-JOHN-at-Arts-West-20190321">
+                   <i>John</i> reviewed in Broadway World</a></h4>
+                   <p>“Sean Lally as Elias is a bundle of frustration. [...] He tends to blast
+                   in every direction and poke at the problem, only making it worse. He is infuriating and sympathetic all at the same time.”</p>
+                </div>
+
+                <!-- Article 12 -->
+                <div class="blogpost review">
+                    <div class="blogpostheading">
+                        <p>REVIEW</p>
+                        <p class="blogdate">July 15 2014</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="http://phindie.com/4459-the-bearded-ladies-and-opera-philadelphia-present-stage-2-in-the-development-of-warhol-inspired-andy-a-popera-4459/">
+                   Profile piece on <i>Andy: a Popera</i> in Phindie</a></h4>
+                   <p>“Lally [in rehearsal] is such an honest performer it’s impossible to tell the difference between the raw material written just today and the older
+                   more rehearsed bits.”</p>
+                </div>
+
+                <!-- Article 13 -->
+                <div class="blogpost review">
+                    <div class="blogpostheading">
+                        <p>REVIEW</p>
+                        <p class="blogdate">October 30 2015</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="https://www.inquirer.com/philly/entertainment/arts/20151030_Tangled_schemes_of_kings__bards__and_comic_foils.html">
+                   <i>Equivocation</i> reviewed in Philadelphia Inquirer</a></h4>
+                   <p>"Sean Lally plays multiple roles, but none as sharp as James [...] He's actively bisexual,
+                   with [...] a sadistic gleam in his eye [...] Lally and Hodge, dangerous, combustible, are all the gunpowder this plot needs."</p>
+                </div>
+
+                 <!-- Article 14 -->
+                <div class="blogpost review">
+                    <div class="blogpostheading">
+                        <p>REVIEW</p>
+                        <p class="blogdate">October 30 2015</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="https://www.talkinbroadway.com/page/regional/philly/phil302.html">
+                   <i>Equivocation</i> reviewed in Talkin' Broadway</a></h4>
+                   <p>"Lally gives a stand-out performance as Sharpe, Tom Wintour, and King James, making the audience laugh out loud one
+                   moment and sending chills up our spines in the next.”</p>
+                </div>
+
+                <!-- Article 15 -->
+                <div class="blogpost review">
+                    <div class="blogpostheading">
+                        <p>REVIEW</p>
+                        <p class="blogdate">May 5 2014</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="http://phindie.com/3780-gint-egopo-ibsen-as-american-folklorist-3780/">
+                   <i>Gint</i> reviewed in Phindie</a></h4>
+                   <p>“Lally puts on a commanding performance in the title role, shifting from Appalachian raconteur to soulless SoCal mogul with
+                   unflagging energy [...] delighting in GINT’s unreflective self-invention.”</p>
+                </div>
+
+                <!-- Article 16 -->
+                <div class="blogpost professional">
+                    <div class="blogpostheading">
+                        <p>PROFESSIONAL</p>
+                        <p class="blogdate">August 3 2018</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="https://www.shrm.org/resourcesandtools/legal-and-compliance/state-and-local-updates/pages/workplace-implications-of-california-privacy-law.aspx">
+                   Viewpoint: Workplace Implications of California’s New Privacy Law</a></h4>
+                   <p>Not long after the European Union passed the General Data Protection Regulation, California became the first state to
+                   introduce its own suite of consumer privacy rules. The California Consumer Privacy Act (CCPA), which was signed into law
+                   June 28 by Gov. Jerry Brown, includes many provisions aimed at bolstering consumers' privacy rights. Here's an overview of
+                   the law and what it means for employers.</p>
+                </div>
+
+                <!-- Article 17 -->
+                <div class="blogpost professional">
+                    <div class="blogpostheading">
+                        <p>PROFESSIONAL</p>
+                        <p class="blogdate">August 3 2018</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="https://americanlegalnews.com/the-man-leading-the-charge-against-the-specter-of-voter-fraud/">
+                   The Man Leading the Charge Against the Specter of Voter Fraud</a></h4>
+                   <p>Though the commission was dissolved earlier this year, Kobach and his acolytes have not given up on their fight against
+                   the specter of voter fraud. During the lawsuit – argued in March – Kobach summoned his team of experts, and in doing so,
+                   dug his own grave. Hans von Spakovsky, a legal fellow at the Heritage Foundation, spoke about the pervasiveness of voter
+                   fraud and the impact a small number of fraudulent voters can have on an election. [...] He later confessed that he couldn’t
+                   “identify a single case where the outcome was decided by noncitizen voting.”</p>
+                </div>
+
+                <!-- Article 18 -->
+                <div class="blogpost professional">
+                    <div class="blogpostheading">
+                        <p>PROFESSIONAL</p>
+                        <p class="blogdate">April 3 2018</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="https://americanlegalnews.com/district-judge-rules-in-favor-of-transgender-student-in-maryland/">
+                   District Judge Rules in Favor of Transgender Student in Maryland</a></h4>
+                   <p>Things were looking up for Max, until one day, his school pushed back and excluded him from the boys’ locker room. They forced the 15-year old to
+                   use a gender-neutral facility, effectively alienating him from his classmates and teachers. Now, Max is a part of an ongoing lawsuit that, so far, is
+                   working in his favor – and in favor of transgender youths throughout the US.</p>
+                </div>
+
+                <!-- Article 19 -->
+                <div class="blogpost professional">
+                    <div class="blogpostheading">
+                        <p>PROFESSIONAL</p>
+                        <p class="blogdate">April 30 2018</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="https://americanlegalnews.com/us-chamber-of-commerce-against-the-unionization-of-uber-drivers/">
+                   US Chamber of Commerce, Against the Unionization of Uber Drivers</a></h4>
+                   <p>Alongside the burgeoning gig economy, there has emerged a set of intractable questions around workers’ rights and the application of certain regulations.
+                   In Seattle, these questions came to a head, after the city council unanimously voted on an ordinance allowing Uber (and other ride-share) drivers to unionize
+                   and negotiate with their employer.</p>
+                </div>
+
+                 <!-- Article 20 -->
+                <div class="blogpost review">
+                    <div class="blogpostheading">
+                        <p>REVIEW</p>
+                        <p class="blogdate">2014</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="http://www.curtainup.com/deathofasalesmanphila14.html">
+                   <i>Death of a Salesman</i> reviewed in CurtainUp</a></h4>
+                   <p>“Sean Lally taps some rich hidden source to portray Biff's bravado, his loser side, his pain, and ultimately
+                   his comprehension.”</p>
+                </div>
+
+                <!-- Article 21 -->
+                <div class="blogpost review">
+                    <div class="blogpostheading">
+                        <p>REVIEW</p>
+                        <p class="blogdate">March 29 2012</p>
+                    </div>
+                   <h4><a class="blogtitlelink" target="_blank" href="http://www.curtainup.com/deathofasalesmanphila14.html">
+                   <i>Romeo and Juliet</i> reviewed in WHYY</a></h4>
+                   <p>“Lally delivers a genuine performance of an awkward teenager in love, transforming into a young
+                   man who avenges the death of his friend Mercutio."</p>
+                </div>
+
+                <!-- TODO: write some backend/java to complete this page. For instance, initialize a sql database that auto-populates with the contents of your wordpress blog. -->
                 <br><br><br><br>
                 <br><br><br><br>
                 <br><br><br><br>
@@ -199,12 +363,13 @@
                       <p id="confirmmsg"></p>
                   </div>
                   <div class="modal-footer">
-                       <button type="button" class="okbtn" data-bs-dismiss="modal">OK</button>
+                       <button type="button" class="confirmbtn" data-bs-dismiss="modal">OK</button>
                    </div>
                 </div>
              </div>
          </div>
 
+        <!-- Social media icons listed in bottom right corner -->
         <footer class="articlesheaderfooter">
              <ul id="social">
                 <li class="sociallist"><a target="_blank" href="https://www.instagram.com/mydearanacolutha/">
@@ -222,9 +387,10 @@
             </ul>
         </footer>
 
+        <!-- All Javascript below -->
         <script>
 
-        // Check for valid email address and respond accordingly //
+        // Check for valid email address and respond accordingly
         function confirm() {
             let email = document.querySelector('#email').value;
             let myRe = /^[a-zA-Z.0-9]+@[a-zA-Z]+(\.com|\.edu)$/g;
@@ -242,32 +408,96 @@
             }
         }
 
-        // when window resizes to below 677px, change list of submit buttons to dropdown at top of page //
+        // when window resizes to below 677px, change list of submit buttons to dropdown at top of page
         function changeNav() {
             let width = window.outerWidth;
             let html= '';
             if (width < 677) {
-                html = '<select name="genres" class="litbtn"><option value="poems">POEMS</option><option value="essays">ESSAYS</option><option value="narrative">NARRATIVE</option><option value="commercial">COMMERCIAL</option>';
+                html = '<select name="genres" class="litbtn" onchange="filterBlog(event);"><option value="genres" disabled selected>GENRES</option><option value="poems" id="poem">POEMS</option><option value="essays">ESSAYS</option><option value="professional">PROFESSIONAL</option><option value="reviews">REVIEWS</option>';
             }
             else {
-                html='<input type="submit" class="litbtn" id="poems" value="POEMS"> <input type="submit" class="litbtn" id="essays" value="ESSAYS"><input type="submit" class="litbtn" id="narrative" value="NARRATIVE"><input type="submit" class="litbtn" id="commercial" value="COMMERCIAL">';
+                html='<button class="litbtn" id="all" onclick="filterBlog(event);">ALL</button><button class="litbtn" id="poem" onclick="filterBlog(event);">POEMS</button><button class="litbtn" id="essay" onclick="filterBlog(event)";>ESSAYS</button><button class="litbtn" id="professional" onclick="filterBlog(event);">PROFESSIONAL</button><button class="litbtn" id="review" onclick="filterBlog(event);">REVIEWS</button>';
             }
-            document.querySelector('.blogform').innerHTML = html
+            document.querySelector('.blogbuttons').innerHTML = html
         }
 
-        // When page loads, check for size. Select 'submit button' format if above 677pm and 'dropdown' format if below 677px. //
+        // When button is clicked filter out all the articles with genres that don't match the button value.
+        function filterBlog(event) {
+
+            // Select all <div> elements on page
+            let fullgenrediv = document.querySelectorAll('div');
+
+            // Initialize an array containing each genre type
+            let genrelist = ['all', 'poem', 'essay', 'review', 'professional'];
+
+            // Capture the button id in a local variable
+            let button = event.target.id;
+
+            // If using an ipad or flipped smartphone, this will make it so buttons remain highlighted after being selected
+            if (window.outerWidth < 1081) {
+                for (let n = 0; n < genrelist.length; n++) {
+                    if (genrelist[n] !== button) {
+                        document.getElementById(genrelist[n]).style.backgroundColor = 'rgb(88, 89, 164)';
+                        document.getElementById(genrelist[n]).style.color = 'black';
+                    }
+                }
+                document.getElementById(button).style.backgroundColor = 'rgb(94, 42, 102)';
+                document.getElementById(button).style.color = 'rgb(188, 124, 198)';
+            }
+
+            if (button === 'all') {
+                let allblogposts = document.querySelectorAll('div.blogpost');
+                for (let y = 0; y < allblogposts.length; y++) {
+                    allblogposts[y].style.display = 'block';
+                }
+                return;
+            }
+
+            // Remove genre listed on clicked button from the 'genrelist' array.
+            for (let x = 0; x < genrelist.length; x++) {
+                if (button === genrelist[x]) {
+                    genrelist.splice(x, 1);
+                }
+            }
+
+            // Hide cards that don't contain the genre listed on the button. To do this we also have to explicitly
+            // display the cards with multiple genres that also contain the button value (hence the two if conditions)
+            for (let i = 0; i <  fullgenrediv.length; i++) {
+                let classnames = fullgenrediv[i].classList.toString();
+                for (let j = 0; j < genrelist.length; j++) {
+                    if (classnames.includes(genrelist[j])) {
+                        fullgenrediv[i].style.display = 'none';
+                    }
+                }
+                if (classnames.includes(button)) {
+                    fullgenrediv[i].style.display = 'block';
+                }
+            }
+        }
+
+        // When page loads, check for size. Select button format if above 677pm and select/option format if below 677px.
         let width = window.outerWidth;
         let html= '';
         if (width < 677) {
-            html = '<select name="genres" class="litbtn"><option value="poems">POEMS</option><option value="essays">ESSAYS</option><option value="narrative">NARRATIVE</option><option value="commercial">COMMERCIAL</option>';
+            html = '<select name="genres" class="litbtn" onchange="filterBlog(event);"><option value="genres" disabled selected>GENRES</option><option value="poems" id="poem">POEMS</option><option value="essays">ESSAYS</option><option value="professional">PROFESSIONAL</option><option value="review">REVIEWS</option>';
         }
         else {
-            html='<input type="submit" class="litbtn" value="POEMS"> <input type="submit" class="litbtn" value="ESSAYS"><input type="submit" class="litbtn" value="NARRATIVE"><input type="submit" class="litbtn" value="COMMERCIAL">';
+            html = '<button class="litbtn" id="all" onclick="filterBlog(event);">ALL</button><button class="litbtn" id="poem" onclick="filterBlog(event);">POEMS</button><button class="litbtn" id="essay" onclick="filterBlog(event)";>ESSAYS</button><button class="litbtn" id="professional" onclick="filterBlog(event);">PROFESSIONAL</button><button class="litbtn" id="review" onclick="filterBlog(event);">REVIEWS</button>';
         }
+        document.querySelector('.blogbuttons').innerHTML = html
 
-        document.querySelector('.blogform').innerHTML = html
-
-
+        // Listen for input in search bar, and show only the articles containing search term. Search is case insensitve.
+        let input = document.querySelector('input');
+        input.addEventListener('keyup', function () {
+            let blogdivs = document.querySelectorAll('.blogpost');
+            for (let i = 0; i < blogdivs.length; i++) {
+                blogdivs[i].style.display = 'none';
+                let lowerblogdiv = blogdivs[i].innerHTML.toLowerCase();
+                if (lowerblogdiv.includes(input.value.toLowerCase())) {
+                    blogdivs[i].style.display = 'block';
+                }
+            }
+        });
 
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
