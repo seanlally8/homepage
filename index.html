@@ -36,10 +36,10 @@
 
             <!-- Footer -->
             <!-- NOTE TO SELF: consider reveting the button in the <form> tag back to an input with type=submit -->
-                    <form class="emailform">
+                    <form action="process_subscription.py" class="emailform" method="post">
                         <input type="text" id="email" autocomplete="off" placeholder="enter your email here" size="30">
                         <!-- Button trigger modal -->
-                        <button onclick="confirm();" type="button" class="confirmbtn" data-bs-toggle="modal" data-bs-target="#mainmodal">
+                        <button onclick="confirm();" type="submit" class="confirmbtn" data-bs-toggle="modal" data-bs-target="#mainmodal">
                           SUBSCRIBE
                         </button>
                     </form>
