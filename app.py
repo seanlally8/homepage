@@ -20,7 +20,7 @@ if not os.path.exists(EXCEL_FILE):
 def form():
     return render_template('index.html')
 
-@app.route('/submit', methods=['POST'])
+@app.route('/', methods=['POST'])
 def submit():
     email = request.form.get('email')
 
@@ -45,14 +45,6 @@ def submit():
 
         wb.save(EXCEL_FILE)
 
-        return f"""
-            <h2>Thank you!</h2>
-            <p>Email submitted: {email}</p>
-            <p>All emails saved to <code>{EXCEL_FILE}</code>.</p>
-            <a href="/">Submit another</a>
-        """
-    else:
-        return "No email provided"
 
 if __name__ == '__main__':
     app.run(debug=True)
