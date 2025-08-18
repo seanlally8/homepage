@@ -16,13 +16,12 @@ if not os.path.exists(EXCEL_FILE):
     ws.append(["Email"])  # Header row
     wb.save(EXCEL_FILE)
 
-@app.route('/')
-def form():
-    return render_template('index.html')
 
-@app.route('/', methods=['POST'])
-def submit():
-    email = request.form.get('email')
+@app.route('/', methods=['GET','POST'])
+def form():
+    email = None
+    if request.method == 'POST':
+        email = request.form.get('email')
 
     if email:
         # Load existing Excel file
@@ -34,7 +33,7 @@ def submit():
 
         # Optional: Sort all emails alphabetically
         # Skip header row
-        emails = [row[0].value for row in ws.iter_rows(min_row=2, values_only=True)]
+        emails = [row[0] for row in ws.iter_rows(min_row=2, values_only=True)]
         emails = list(set(emails))  # Remove duplicates if needed
         emails.sort()
 
@@ -44,8 +43,10 @@ def submit():
             ws.append([e])
 
         wb.save(EXCEL_FILE)
+    return render_template('index.html')
+
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
 

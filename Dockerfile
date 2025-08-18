@@ -13,11 +13,15 @@ RUN apk update && apk add --no-cache \
     musl-dev \
     gcc \
     && pip install --upgrade pip \
-    && pip install flask \
+    && pip install flask openpyxl \
     && apk del build-base gcc musl-dev libffi-dev
 
 # Set the working directory
 WORKDIR /home
+
+COPY . /home
+
+EXPOSE 5000
 
 # Copy application code (if any) into the container
 # COPY . /app
