@@ -345,7 +345,7 @@ ul {
     position: absolute;
     top: 0;
     bottom: 0;
-    background-image: url("couch_sean.jpg");
+    background-image: url("/static/img/couch_sean.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

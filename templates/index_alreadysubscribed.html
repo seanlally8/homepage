@@ -1,0 +1,22 @@
+<!-- this appears if you're alreadyu subscribed -->
+{% extends "layout.html" %}
+
+{% block modal_title %}
+
+    Double Dipping?
+
+{% endblock %}
+
+{% block confirmmsg %}
+
+	You're already subscribed my friend. Thanks for the enthusiasm though!
+
+{% endblock %}
+
+{% block script %}
+    
+    document.addEventListener('DOMContentLoaded', function () {
+          var myModal = new bootstrap.Modal(document.getElementById('mainmodal'));
+          myModal.show();
+      }); 
+{% endblock %} 
