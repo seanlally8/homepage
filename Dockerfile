@@ -12,6 +12,7 @@ RUN apk update && apk add --no-cache \
     libffi-dev \
     musl-dev \
     gcc \
+	sqlite \
     && pip install --upgrade pip \
     && pip install flask openpyxl \
     && apk del build-base gcc musl-dev libffi-dev
