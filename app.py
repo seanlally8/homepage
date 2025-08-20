@@ -5,15 +5,21 @@ import re
 import sqlite3
 import smtplib
 
+from dotenv import load_dotenv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from flask import Flask, render_template, request, redirect, url_for, flash
 
+# Global constants
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Better: generates a secure random key each run
 
-# initialize list to store incoming emails
-email_list = []
+load_dotenv()  # load variables from .env
+
+EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+SMTP_SERVER = os.environ.get("SMTP_SERVER", "smtp.gmail.com")
+SMTP_PORT = int(os.environ.get("SMTP_PORT", 587))
 
 # Define function that tests emails for appropriate format (abc@hotmail.com or abc@gmail.co.uk or abc@university.edu etc)
 def validate_email(email):
@@ -22,27 +28,23 @@ def validate_email(email):
 
 # Define function to send confirmation email upon subscription
 def send_confirmation_email(to_email):
-    # Your Gmail credentials
-    sender_email = "seanlally8@gmail.com"
-    app_password = "ypqk fcif vytv cnfn"  # NOT your Gmail password
-
     # Email content
     subject = "Subscription Confirmed"
     body = "Hey! You made it! Now we can be best friends foreverrrrr."
 
     # Set up MIME structure
     message = MIMEMultipart()
-    message["From"] = sender_email
+    message["From"] = EMAIL_ADDRESS
     message["To"] = to_email
     message["Subject"] = subject
     message.attach(MIMEText(body, "plain"))
 
     try:
         # Connect to Gmail SMTP server
-        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
         server.starttls()  # Secure the connection
-        server.login(sender_email, app_password)
-        server.sendmail(sender_email, to_email, message.as_string())
+        server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+        server.sendmail(EMAIL_ADDRESS, to_email, message.as_string())
         server.quit()
         print(f"Confirmation email sent to {to_email}")
     except Exception as e:
