@@ -16,8 +16,8 @@
 
     <!-- Header -->
     	{% block homeimage  %} {% endblock %}
-	<header {% block indexheaderfooter  %} {% endblock %}>
-	  <h1><a class="headlink" href="/index">Sean Lally</a></h1>
+	<header {% block headerfooter %} {% endblock %}>
+	  <h1><a class="headlink" href="/">Sean Lally</a></h1>
 	  <h2>{% block header %}{% endblock %}</h2>
 
 	<!-- LAYOUT The following div is a bootstrap component that I've modified in style.css -->
@@ -25,7 +25,7 @@
 	  <button class="btn btn-secondary dropdown-toggle shadow-none" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	  </button>
 	  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-	    <li><a class="dropdown-item" href="/index">Home</a></li>
+	    <li><a class="dropdown-item" href="/">Home</a></li>
 	    <li><a class="dropdown-item" href="/about">My Thing</a></li>
 	    <li><a class="dropdown-item" href="/videos">Videos</a></li>
 	    <li><a class="dropdown-item" href="/articles">Articles</a></li>
@@ -34,7 +34,7 @@
 	</div>
 	</header>
             <!-- End bootstrap -->
-	{% block aboutsection %}{% endblock %}	
+	{% block section %}{% endblock %}	
             <!-- Footer -->
             <!-- NOTE TO SELF: consider reveting the button in the <form> tag back to an input with type=submit -->
                     <form class="emailform" method="post" action="/subscribe">
@@ -52,25 +52,29 @@
                             <div class="modal-content indexheaderfooter">
                               <div class="modal-header">
 								  <h5 class="modal-title" id="modal-title"> 
-									  	{% if show_success_modal %}
-    										Woohoo!
-  										{% elif show_already_subscribed_modal %}
-    										Double Dipping?
-  										{% elif show_badformat_modal %}
-    										Uhhhhhhhhhhh
-  										{% endif %}
+									  {% with messages = get_flashed_messages() %}
+    									{% if 'success' in messages %}
+        									Woohoo!
+    									{% elif 'already_subscribed' in messages %}
+									        Double Dipping?
+									    {% elif 'badformat' in messages %}
+									        Uhhhhhhhhhhh
+									    {% endif %}
+									  {% endwith %}
 								  </h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                               </div>
                               <div class="modal-body">
 								<p id="confirmmsg">
-								  	{% if show_success_modal %}
-    									You are now subscribed to my newsletter! You will receive a confirmation email shortly and will be able to sever communication with me forever at any time by clicking unsubscribe.
-  									{% elif show_already_subscribed_modal %}
-    									You're already subscribed my friend. Thanks for the enthusiasm though!
-  									{% elif show_badformat_modal %}
-    									I guess you didn't give me an email address? Try again! Something along the lines of name@example.com
-  									{% endif %}
+									    {% with messages = get_flashed_messages() %}
+      										{% if 'success' in messages %}
+										          You are now subscribed to my newsletter! You’ll receive a confirmation email shortly and can unsubscribe at any time.
+											{% elif 'already_subscribed' in messages %}
+										          You're already subscribed, my friend. Thanks for the enthusiasm though!
+									   		{% elif 'badformat' in messages %}
+										          Hmm... that doesn’t look like a valid email. Try something like name@example.com.
+									      	{% endif %}
+    									{% endwith %}
 								</p>
                               </div>
                               <div class="modal-footer">
@@ -81,7 +85,7 @@
                         </div>
 
 
-            <footer {% block indexheaderfootertwo %} {% endblock %}>
+            <footer {% block headerfootertwo %} {% endblock %}>
                 <ul id="social">
                     <li class="sociallist"><a target="_blank" href="https://www.instagram.com/mydearanacolutha/">
                         <i class="fa fa-instagram" style="font-size:30px;color:black"></i>
@@ -101,11 +105,12 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>	
 	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-        {% if show_success_modal or show_already_subscribed_modal or show_badformat_modal %}
-            var myModal = new bootstrap.Modal(document.getElementById('mainmodal'));
-            myModal.show();
-        {% endif %}
-    });
+		{% with messages = get_flashed_messages() %}
+            {% if 'success' in messages or 'already_subscribed' in messages or 'badformat' in messages %}
+                var myModal = new bootstrap.Modal(document.getElementById('mainmodal'));
+                myModal.show();
+            {% endif %}
+        {% endwith %}
+		{% block script %} {% endblock %}
 	</script>
    </body>

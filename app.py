@@ -7,9 +7,10 @@ import smtplib
 
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)  # Better: generates a secure random key each run
 
 # initialize list to store incoming emails
 email_list = []
@@ -56,35 +57,51 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/articles')
+def articles():
+    return render_template('articles.html')
+
+@app.route('/music')
+def music():
+    return render_template('music.html')
+
+@app.route('/videos')
+def videos():
+    return render_template('videos.html')
+
 @app.route('/subscribe', methods=['POST'])
 def subscribe():
     email = request.form.get('email')
     origin = request.form.get('origin', '/')
     template_name = origin.strip('/') or 'index'
 
-    if not validate_email(email):
-        return render_template(f"{template_name}.html", show_badformat_modal=True)
 
-    conn = sqlite3.connect('emails.db')
-    cursor = conn.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS emails (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            email TEXT UNIQUE NOT NULL
-        )
-    ''')
+    if not validate_email(email):
+        flash('badformat')
+        return redirect(origin)
 
     try:
+        conn = sqlite3.connect('emails.db')
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS emails (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                email TEXT UNIQUE NOT NULL
+            )
+        ''')
+
         cursor.execute('INSERT INTO emails (email) VALUES (?)', (email,))
         conn.commit()
+        flash('success')
         send_confirmation_email(email)
-        return render_template(f"{template_name}.html", show_success_modal=True)
 
     except sqlite3.IntegrityError:
-        return render_template(f"{template_name}.html", show_already_subscribed_modal=True)
+        flash('already_subscribed')
 
     finally:
         conn.close()
+
+    return redirect(origin)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
